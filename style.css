@@ -1,0 +1,178 @@
+:root {
+    --bg-color: rgb(20,20,20);
+    --card-color: rgb(23,23,23);
+    --color-green300: hsla(159, 42%, 88%, 1);
+    --color-green400: hsla(160, 52%, 71%, 1);
+    --color-green500: hsla(172, 95%, 18%, 1);
+    --color-green600: hsla(171, 15%, 35%, 1);
+    --color-green700: hsla(171, 11%, 24%, 1);
+    --color-green800: hsla(158, 23%, 18%, 1);
+    --color-yellow500: hsla(36, 97%, 70%, 1);
+    --color-yellow600: hsla(36, 74%, 25%, 1);
+    --color-yellow700: hsla(36, 91%, 13%, 1);
+    --color-primary: var(--color-green800);
+    --color-primary-accent: var(--color-green400);
+    --color-gradient: linear-gradient( to bottom, hsla(158, 23%, 18%, 0) 0%, hsla(158, 23%, 18%, .013) 9.7%, hsla(158, 23%, 18%, .049) 18.1%, hsla(158, 23%, 18%, .104) 25.5%, hsla(158, 23%, 18%, .175) 31.9%, hsla(158, 23%, 18%, .259) 37.7%, hsla(158, 23%, 18%, .352) 43%, hsla(158, 23%, 18%, .45) 47.9%, hsla(158, 23%, 18%, .55) 52.8%, hsla(158, 23%, 18%, .648) 57.7%, hsla(158, 23%, 18%, .741) 63%, hsla(158, 23%, 18%, .825) 68.7%, hsla(158, 23%, 18%, .896) 75%, hsla(158, 23%, 18%, .951) 82.2%, hsla(158, 23%, 18%, .987) 90.5%, hsl(158, 23%, 18%) 100% );
+    --color-text-primary: var(--color-green400);
+    --font-h1: clamp(3.2rem, .5692rem + 8.238vw, 13.75rem);
+    --font-body: clamp(1rem, .8852rem + .4898vw, 1.375rem);
+    --color-text-secondary: var(--color-green300);
+    --font-h2-display: clamp(1.875rem, 1.301rem + 2.449vw, 3.95rem);
+}
+
+@font-face {
+    font-family: "acorn";
+    src: url('./fonts/Acorn-Bold.woff2') format('woff2'),
+         url('./fonts/Acorn-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: "gt";
+    src: url('./fonts/gt.woff') format('woff');
+}
+
+/* .header {
+    background-color: var(--color-gradient);
+} */
+
+body {
+    background: var(--color-primary);
+}
+
+/* -------------------Header section--------------- */
+.heading {
+    font-family: "acorn", sans-serif;
+    padding: 8rem 0 0rem;
+    text-align: center;
+    font-size: var(--font-h1);
+    line-height: 100%;
+    letter-spacing: -2px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.header > div {
+    position: relative;
+}
+
+.header p {
+    font-size: var(--font-body);
+    text-align: center;
+    font-family: "gt", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--color-text-secondary);
+    letter-spacing: -.3px;
+    line-height: 160%;
+}
+
+#opening {
+    position: absolute;
+    left: 15%;
+    top: 70%;
+}
+#closing {
+    position: absolute;
+    left: 75%;
+    top: 20%;
+}
+
+/* -------------------About section--------------- */
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2rem 0 1rem;
+}
+
+.person {
+    background: var(--color-yellow500);
+    border-radius: 200px 200px 0 0;
+}
+
+.per-intro p {
+    margin-top: 0;
+    height: 80px;
+    text-align: center;
+    padding-top: 5%;
+    color: var(--color-primary);
+    font-size: 24px;
+    font-family: "acorn", sans-serif;
+    background: var(--color-primary-accent);
+}
+
+.about-text {
+    width: 60%;
+}
+.about-text h2 {
+    font-size: var(--font-h2-display);
+    text-align: center;
+    font-family: "acorn", sans-serif;
+    color: var(--color-text-primary);
+    line-height: 110%;
+    font-weight: 100;
+}
+
+.about-text p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-body);
+    line-height: 160%;
+}
+
+/* .card {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    height: 260px;
+    width: 300px;
+    position: relative;
+}
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 80%;
+    width: calc(100% - 20px);
+    cursor:  pointer;
+}
+
+#cards:hover > .card > .card-border {
+    opacity: 1;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card::before,
+.card > .card-border {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 500ms ;
+
+}
+
+.card::before {
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.06), transparent 40%);
+    z-index: 3;
+}
+
+.card > .card-border {
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.3), transparent 40%);
+    z-index: 1;
+}
+
+.card > .card-content {
+    background-color: var(--card-color);
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    border-radius: inherit;
+    margin: 1px;
+    position: relative;
+    z-index: 2;
+} */
