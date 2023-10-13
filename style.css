@@ -17,6 +17,7 @@
     --font-h1: clamp(3.2rem, .5692rem + 8.238vw, 13.75rem);
     --font-body: clamp(1rem, .8852rem + .4898vw, 1.375rem);
     --color-text-secondary: var(--color-green300);
+    --color-text-tertiary: var(--color-green800);
     --font-h2-display: clamp(1.875rem, 1.301rem + 2.449vw, 3.95rem);
 }
 
@@ -86,6 +87,7 @@ body {
 .person {
     background: var(--color-yellow500);
     border-radius: 200px 200px 0 0;
+    margin-left: 5rem;
 }
 
 .per-intro p {
@@ -97,6 +99,7 @@ body {
     font-size: 24px;
     font-family: "acorn", sans-serif;
     background: var(--color-primary-accent);
+    margin-left: 5rem;
 }
 
 .about-text {
@@ -115,6 +118,94 @@ body {
     color: var(--color-text-secondary);
     font-size: var(--font-body);
     line-height: 160%;
+}
+
+/* ----------------Highlights Section ---------------- */
+
+.highlights {
+    display: flex;
+    flex-direction: column;
+    font-family: "gt", sans-serif;
+    font-size: 1rem;
+    margin-top: 3%;
+    box-sizing: border-box;
+}
+
+.highlights h1 {
+    font-family: "gt", sans-serif;
+}
+
+.first-high h1,
+.second-high h1,
+.third-high h1,
+.fourth-high h1{
+    margin: 0; 
+    margin-bottom: 0.5rem; 
+    color: var(--color-text-tertiary);
+}
+
+.first-high p,
+.second-high p,
+.third-high p,
+.fourth-high p {
+    margin: 0;
+    color: var(--color-text-tertiary);
+}
+
+.first-high {
+    background: var(--color-primary-accent);
+    border-radius: 4rem;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    margin-right: 3em;
+    width: 50%;
+    min-height: 80px;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-high {
+    background: var(--color-primary-accent);
+    box-sizing: border-box;
+    border-radius: 4rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 15px;
+    width: 59%;
+    min-height: 80px;
+    margin-right: 3em;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+}
+
+.third-high {
+    background: var(--color-primary-accent);
+    border-radius: 4rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 15px;
+    width: 23%;
+    min-height: 80px;
+    box-sizing: border-box;
+    align-self: flex-start;
+    display: flex;
+    margin-left: 25%;
+    justify-content: space-between;
+}
+
+.fourth-high {
+    background: var(--color-primary-accent);
+    border-radius: 4rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 20px;
+    width: 17%;
+    min-height: 80px;
+    align-self: flex-start;
+    box-sizing: border-box;
+    display: flex;
+    margin-left: 7%;
+    justify-content: space-between;
 }
 
 /* .card {
