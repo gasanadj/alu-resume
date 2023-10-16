@@ -19,13 +19,45 @@
     --color-text-secondary: var(--color-green300);
     --color-text-tertiary: var(--color-green800);
     --font-h2-display: clamp(1.875rem, 1.301rem + 2.449vw, 3.95rem);
+    --font-h2: clamp(1.5rem, 1.0982rem + 1.7143vw, 2.8125rem);
+    --color-white30: hsla(160, 52%, 71%, .05);
+    --42px: 2.652rem;
+    --64px: 4rem;
+    --14px: 0.875rem;
+    --spacing-l: max( var(--42px), calc(var(--42px) + (84 - 42) * ((100vw - 375px) / (1600 - 375))) );
+    --spacing-xs: max( var(--14px), calc(var(--14px) + (28 - 14) * ((100vw - 375px) / (1600 - 375))) );
+    --font-h3: clamp(1.375rem, 1.1837rem + .8163vw, 2rem);
 }
-
 @font-face {
     font-family: "acorn";
     src: url('./fonts/Acorn-Bold.woff2') format('woff2'),
          url('./fonts/Acorn-Bold.woff') format('woff');
 }
+
+@font-face {
+    font-family: "acorn-light";
+    src: url('./fonts/Acorn-Light.woff2') format('woff2'),
+         url('./fonts/Acorn-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: "acorn-mediun";
+    src: url('./fonts/Acorn-Medium.woff2') format('woff2'),
+         url('./fonts/Acorn-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: "acorn-regular";
+    src: url('./fonts/Acorn-Regular.woff2') format('woff2'),
+         url('./fonts/Acorn-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: "acorn-semi-bold";
+    src: url('./fonts/Acorn-SemiBold.woff2') format('woff2'),
+         url('./fonts/Acorn-SemiBold.woff') format('woff');
+}
+
 
 @font-face {
     font-family: "gt";
@@ -111,12 +143,12 @@ body {
     font-family: "acorn", sans-serif;
     color: var(--color-text-primary);
     line-height: 110%;
-    font-weight: 100;
 }
 
 .about-text p {
+    font-family: "gt", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--color-text-secondary);
-    font-size: var(--font-body);
+    font-size: 20px;
     line-height: 160%;
 }
 
@@ -208,7 +240,96 @@ body {
     justify-content: space-between;
 }
 
-/* .card {
+/* ---------------Education--------------- */
+
+.education {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 2% .5% 15%;
+}
+.edu-header {
+    line-height: 150%;
+    font-family: "acorn-regular", sans-serif;
+    font-size: var(--font-h2);
+    letter-spacing: -1px;
+    color: var(--color-text-primary);
+    text-align: center;
+    
+}
+
+.edu-header h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.education p {
+    font-family: "gt", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--color-text-secondary);
+    font-size: 20px;
+    line-height: 160%;
+    margin-left: 5%;
+    margin-right: 30%;
+}
+
+/* -------------------Skills-------------------------- */
+
+.skills {
+    background: var(--color-white30);
+    backdrop-filter: blur(10px) saturate(1.3);
+    border-radius: var(--64px);
+    margin: 4% 4% 4% 4%;
+    padding: 2rem 2rem 0 5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.skills-left {
+    display: flex;
+    margin-bottom: 4%;
+}
+
+.number {
+    width: 50%;
+    margin-right: 4%;
+}
+
+.number > div {
+    font-size: var(--42px);
+    color: var(--color-text-primary);
+    opacity: .5;
+}
+
+.number h3 {
+    font-size: var(--font-h3);
+    font-family: "acorn", sans-serif;
+    color: var(--color-text-primary);
+
+}
+
+.number p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-body);
+    font-family: "gt", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 160%;
+}
+
+.explanation {
+    font-family: "gt", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--color-text-secondary);
+    font-size: 20px;
+    line-height: 160%;
+    margin-left: 17%;
+    margin-right: 30%;
+}
+
+/* ----------------------Skills-----------------
+
+.card {
     background-color: rgba(255,255,255,0.1);
     border-radius: 10px;
     height: 260px;
@@ -259,11 +380,12 @@ body {
 }
 
 .card > .card-content {
-    background-color: var(--card-color);
+    background-color: var(--color-white30);
+    backdrop-filter: blur(10px) saturate(1.3);
     height: calc(100% - 2px);
     width: calc(100% - 2px);
     border-radius: inherit;
     margin: 1px;
     position: relative;
     z-index: 2;
-} */
+}  */
