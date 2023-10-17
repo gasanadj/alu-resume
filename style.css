@@ -24,10 +24,25 @@
     --42px: 2.652rem;
     --64px: 4rem;
     --14px: 0.875rem;
+    --16px: 1rem;
     --spacing-l: max( var(--42px), calc(var(--42px) + (84 - 42) * ((100vw - 375px) / (1600 - 375))) );
     --spacing-xs: max( var(--14px), calc(var(--14px) + (28 - 14) * ((100vw - 375px) / (1600 - 375))) );
     --font-h3: clamp(1.375rem, 1.1837rem + .8163vw, 2rem);
+    --color-light-border: hsla(160, 52%, 71%, .2);
+    --radius-base: .75rem;
+    --shadow-lg: 0px 50px 100px -20px rgba(0, 0, 0, .15);
+    --zindex-nav: 1000;
+    --zindex-top: 100;
+    --radius-base: .75rem;
+    --color-backdrop: hsla(158, 23%, 18%, .7);
+    --color-white: hsla(0, 0%, 100%, 1);
+    --font-mini: clamp(.875rem, .8367rem + .1633vw, 1rem);
+    --zindex-content: 50;
+    --color-text-secondary: var(--color-green300);
+    --color-opaque: hsla(160, 52%, 71%, .1);
+    --24px: 1.5rem;
 }
+
 @font-face {
     font-family: "acorn";
     src: url('./fonts/Acorn-Bold.woff2') format('woff2'),
@@ -75,7 +90,7 @@ body {
 /* -------------------Header section--------------- */
 .heading {
     font-family: "acorn", sans-serif;
-    padding: 8rem 0 0rem;
+    padding-top: 5rem;
     text-align: center;
     font-size: var(--font-h1);
     line-height: 100%;
@@ -327,65 +342,217 @@ body {
     margin-right: 30%;
 }
 
-/* ----------------------Skills-----------------
+/* --------------Projects section ------------------ */
+
+.cards {
+    display: flex;
+    margin-right: 2rem;
+    flex-wrap: wrap;
+}
 
 .card {
-    background-color: rgba(255,255,255,0.1);
-    border-radius: 10px;
-    height: 260px;
-    width: 300px;
-    position: relative;
-}
-
-#cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    max-width: 80%;
-    width: calc(100% - 20px);
-    cursor:  pointer;
-}
-
-#cards:hover > .card > .card-border {
-    opacity: 1;
-}
-
-.card:hover::before {
-    opacity: 1;
-}
-
-.card::before,
-.card > .card-border {
-    border-radius: inherit;
-    content: "";
-    height: 100%;
-    left: 0px;
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 500ms ;
-
-}
-
-.card::before {
-    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.06), transparent 40%);
-    z-index: 3;
-}
-
-.card > .card-border {
-    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.3), transparent 40%);
-    z-index: 1;
-}
-
-.card > .card-content {
-    background-color: var(--color-white30);
+    background: var(--color-green800);
     backdrop-filter: blur(10px) saturate(1.3);
-    height: calc(100% - 2px);
-    width: calc(100% - 2px);
-    border-radius: inherit;
-    margin: 1px;
+    box-shadow: 0 0 0 1px var(--color-light-border);
+    border-radius: var(--radius-base);
+    font-size: var(--font-body);
+    padding: 2rem;
+    box-sizing: border-box;
+    margin-left: 2rem;
+    width: 30%;
+    transition: all .3s ease-in-out;
+    margin-bottom: 2rem;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: var(--color-white30);
+}
+
+.card h3 {
+    font-size: var(--font-h3);
+    color: var(--color-text-primary);
+}
+
+.card p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-body);
+    font-family: "gt", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 160%;
+}
+
+.card p > a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+} 
+
+
+
+
+.header, .about, .highlights, .education, .skills, .explanation, .project {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 2s, transform 2s;
+}
+
+/* -----------Contact Section ------------------------ */
+.contact {
+    left: auto;
+    top: auto;
+    width: 350px;
+    height: 600px;
+    right: 40px;
+    bottom: 40px;
+    position: fixed;
+    z-index: var(--zindex-nav);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(40px) saturate(1.3);
+    overflow: hidden;
+    border-radius: var(--radius-base);
+    box-sizing: border-box;
+    border: 1px solid var(--color-primary-accent)!important;
+    background: var(--color-backdrop)!important;
+}
+
+.contact-header {
+    background: var(--color-primary-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--16px);
+    line-height: 1.2;
+    position: absolute;
+    z-index: var(--zindex-top);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.avatar {
+    margin-right: var(--16px);
+}
+
+.avatar img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+}
+
+.contact-header-details {
+    flex: 1;
+    color: var(--color-text-tertiary);
+    font-size: var(--font-mini);
+    font-family: "gt", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.contact-name {
+    font-size: 18px;
+}
+
+.close {
+    width: var(--42px);
+    height: var(--42px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    border-radius: var(--radius-base);
+    fill: var(--color-primary);
+}
+
+.contact-info {
+    width: 100%;
+    position: absolute;
+    top: 74px;
+    overflow-y: scroll;
+    height: 526px;
+    z-index: var(--zindex-content);
+    padding: var(--16px);
+    box-sizing: border-box;
+}
+
+.question-holder {
+    display: flex;
+    font-family: "gt", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: var(--16px);
+    color: var(--color-text-primary);
+    box-sizing: border-box;
+}
+
+.text-holder {
+    color: var(--color-text-secondary)!important;
+    background: var(--color-opaque)!important;
     position: relative;
-    z-index: 2;
-}  */
+    display: inline-block;
+    padding: var(--16px);
+    border-radius: var(--16px);
+    background: var(--color-white);
+    color: var(--color-text-primary);
+    margin-bottom: 6px;
+    box-sizing: border-box;
+}
+
+.button-holder {
+    box-sizing: border-box;
+}
+
+.button-holder > .bq {
+    margin-bottom: 6px;
+}
+
+.bq > button {
+    padding: var(--16px) var(--24px);
+    border-radius: var(--42px);
+    background: transparent;
+    border: 2px solid var(--color-primary-accent);
+    color: var(--color-primary-accent);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    font-family: "gt", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: var(--16px);
+}
+
+.messages {
+   display: flex;
+   font-family: "gt", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-size: var(--16px);
+   flex-direction: column;
+}
+
+.bot-message {
+    color: var(--color-text-secondary)!important;
+    background: var(--color-opaque)!important;
+    position: relative;
+    display: inline-block;
+    padding: var(--16px);
+    border-radius: var(--16px);
+    background: var(--color-white);
+    color: var(--color-text-primary);
+    margin-bottom: 6px;
+    box-sizing: border-box;
+    align-self: flex-start;
+    justify-self: flex-start;
+
+}
+
+.user-message {
+    background: var(--color-green500)!important;
+    color: var(--color-text-secondary)!important;
+    justify-content: flex-end;
+    position: relative;
+    display: inline-block;
+    padding: var(--16px);
+    border-radius: var(--16px);
+    margin-bottom: 6px;
+    box-sizing: border-box;
+    align-self: flex-end;
+    justify-self: flex-end;
+
+}
+
+  
+
+
