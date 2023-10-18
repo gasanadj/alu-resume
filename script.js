@@ -24,11 +24,8 @@ function addButtonListener(button) {
     appendMessage(userMessage, "user");
 
     // Generate and append bot's reply
-    let reply = getBotReply(userMessage);
-    appendMessage(reply, "bot");
-
-    // Display the question buttons below the messages
-    appendQuestionButtons();
+    let replies = getBotReply(userMessage);
+    appendBotReplies(replies);
   });
 }
 
@@ -38,22 +35,44 @@ function appendMessage(message, sender) {
   messageDiv.className = `${sender}-message`;
   messageDiv.innerText = message;
   messagesDiv.appendChild(messageDiv);
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
   scrollToBottom();
 }
 
 function getBotReply(userMessage) {
   switch (userMessage) {
-    case "Just saying hello!":
-      return "Hello there!";
+    case "Just saying hi!":
+      return [
+        "Hello there!🤗",
+        "Thanks for saying hi",
+        "I hope you found my site fun😃",
+        "How can I assist you further?",
+      ];
     case "We'd like to hire you":
-      return "That's great! Please reach out to Junior directly.";
+      return [
+        "That's great!",
+        "Thank you for considering me",
+        "Please reach out to me via Email.",
+        "The email is d.gasana@alustudent.com",
+        "Anything else?",
+      ];
     case "Where did you learn coding?":
-      return "Junior learned coding from various online platforms and practice.";
+      return [
+        "I learned coding from various online platforms such as Coursera, Hackerrank, Codewars, and Youtube🤓.",
+        "I also gained experience through continuous practice.",
+        "Anything else?",
+      ];
     case "Be my mentor":
-      return "Sure! Junior would be happy to help. Please contact him.";
+      return [
+        "Sure!",
+        "I would be happy to help.",
+        "Please contact me via my email address.",
+        "The email is d.gasana@alustudent.com",
+        "Can't wait 🔥",
+      ];
     default:
-      return "Sorry, I don't understand that.";
+      return ["Sorry, I don't understand that."];
   }
 }
 
@@ -61,7 +80,7 @@ function appendQuestionButtons() {
   const messagesDiv = document.querySelector(".messages");
 
   const questions = [
-    "Just saying hello!",
+    "Just saying hi!",
     "We'd like to hire you",
     "Where did you learn coding?",
     "Be my mentor",
@@ -98,3 +117,25 @@ function scrollToBottom() {
   const lastChild = messagesDiv.lastChild;
   lastChild.scrollIntoView({ behavior: "smooth" });
 }
+
+function appendBotReplies(replies, index = 0) {
+  if (index < replies.length) {
+    setTimeout(() => {
+      appendMessage(replies[index], "bot");
+      appendBotReplies(replies, index + 1);
+    }, 1000); // 1 second delay
+  } else {
+    // After all bot replies, display the question buttons again.
+    appendQuestionButtons();
+  }
+}
+
+// close the modal
+document.addEventListener("DOMContentLoaded", function () {
+  const closeButton = document.querySelector(".close");
+  const contactSection = document.querySelector(".contact");
+
+  closeButton.addEventListener("click", function () {
+    contactSection.style.display = "none";
+  });
+});
