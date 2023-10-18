@@ -1,6 +1,6 @@
 document.addEventListener("scroll", () => {
   var elements = document.querySelectorAll(
-    ".header, .about, .highlights, .education, .skills, .explanation, .project"
+    ".header, .about, .highlights, .education, .skills, .explanation, .project, .footer"
   );
   var windowHeight = window.innerHeight;
   elements.forEach((element) => {
