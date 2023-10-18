@@ -154,3 +154,8 @@ const contactSection = document.querySelector(".contact");
 btn.addEventListener("click", () => {
   contactSection.style.display = "block";
 });
+
+const btn2 = document.getElementById("cont1");
+btn2.addEventListener("click", () => {
+  contactSection.style.display = "block";
+});

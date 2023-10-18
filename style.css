@@ -100,7 +100,7 @@ header {
     z-index: var(--zindex-nav);
     top: 0;
     right: 0;
-    left: 0;
+    left: 0; 
     width: 100%;
     padding: 0 var(--16px);
     box-sizing: border-box;
@@ -127,6 +127,7 @@ nav {
     padding: calc(var(--20px) - 10px);
     border-radius: 50px;
     transition: all .2s linear;
+    box-sizing: border-box;
 }
 
 .list-item {
@@ -151,7 +152,7 @@ nav {
     align-items: center;
 }
 
-#cont {
+#cont, #cont1 {
     cursor: pointer;
 }
 /* -------------------Intro section--------------- */
@@ -533,6 +534,10 @@ nav {
     fill: var(--color-primary);
 }
 
+.close:hover {
+    background: var(--color-green500);
+}
+
 .contact-info {
     width: 100%;
     position: absolute;
@@ -709,6 +714,10 @@ footer a {
         display: none;
     }
 
+    .main {
+        flex-wrap: wrap;
+    }
+
     .first-high,
     .second-high,
     .third-high,
@@ -748,11 +757,6 @@ footer a {
         flex-direction: column;
     }
 
-    .else-content {
-        display: flex;
-        justify-content: space-evenly;
-    }
-
     .copyright h2 {
         display: none;
     }
@@ -776,30 +780,18 @@ footer a {
         margin-left: .5rem;
     }
 
-    .header {
-        width: 90%;
-    }
-
-    .list-item {
-        width: 100%;
-        box-sizing: border-box;
-        
-    }
-
-    .list-item a {
-        display: block;
-        width: 100%;
-    }
-
-    .main {
-        width: 80%;
-    }
-
     #opening {
         display: none;
     }
     #closing {
         display: none;
+    }
+
+    .contact {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
     }
 
 
