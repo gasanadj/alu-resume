@@ -150,6 +150,10 @@ nav {
     display: flex;
     align-items: center;
 }
+
+#cont {
+    cursor: pointer;
+}
 /* -------------------Intro section--------------- */
 .heading {
     font-family: "acorn", sans-serif;
@@ -187,9 +191,6 @@ nav {
     top: 20%;
 }
 
-#cont {
-    cursor: pointer;
-}
 
 /* -------------------About section--------------- */
 
@@ -679,6 +680,129 @@ footer a {
 .song a {
     text-decoration: none;
 }
-  
+
+
+
+/* -------------------Media Queries ------------------- */
+
+@media screen and (max-width: 996px) {
+    .about-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-text {
+        width: 90%;
+    }
+    .about-text h2 {
+        margin-left: 2rem;
+    }
+    .about-text p {
+        margin-left: 2rem;
+    }
+
+    .person {
+        display: none;
+    }
+
+    .per-intro p {
+        display: none;
+    }
+
+    .first-high,
+    .second-high,
+    .third-high,
+    .fourth-high {
+        width: 80%;
+        margin-left: 2rem;
+        align-self: center;
+        display: flex;
+        margin-right: 2rem;
+    }
+
+    .cards {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+    }
+
+    .skills {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .skills-left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .number {
+        width: 80%;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .else-content {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .copyright h2 {
+        display: none;
+    }
+    .edu-header h2 {
+        display: block;
+        margin-right: 2rem;
+    }
+
+    .education p {
+        margin-right: 2rem;
+        width: 90%;
+    }
+
+    .explanation {
+        width: 90%;
+        margin-left: 2rem;
+        margin-right: 2rem; 
+    }
+
+    #outro {
+        margin-left: .5rem;
+    }
+
+    .header {
+        width: 90%;
+    }
+
+    .list-item {
+        width: 100%;
+        box-sizing: border-box;
+        
+    }
+
+    .list-item a {
+        display: block;
+        width: 100%;
+    }
+
+    .main {
+        width: 80%;
+    }
+
+    #opening {
+        display: none;
+    }
+    #closing {
+        display: none;
+    }
+
+
+}
 
 
