@@ -1,6 +1,6 @@
 document.addEventListener("scroll", () => {
   var elements = document.querySelectorAll(
-    ".header, .about, .highlights, .education, .skills, .explanation, .project, .footer"
+    ".about, .highlights, .education, .skills, .explanation, .project, .footer"
   );
   var windowHeight = window.innerHeight;
   elements.forEach((element) => {
@@ -138,4 +138,19 @@ document.addEventListener("DOMContentLoaded", function () {
   closeButton.addEventListener("click", function () {
     contactSection.style.display = "none";
   });
+});
+
+var nav = document.querySelector(".main");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > 180) {
+    nav.classList.add("nav-scroll");
+  } else {
+    nav.classList.remove("nav-scroll");
+  }
+});
+
+const btn = document.getElementById("cont");
+const contactSection = document.querySelector(".contact");
+btn.addEventListener("click", () => {
+  contactSection.style.display = "block";
 });
