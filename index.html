@@ -5,292 +5,434 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Junior | Portifolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Didas Junior | Software Engineer &middot; Product Founder &middot; Systems Architect</title>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Floating Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="https://github.com/GasanaJr" target="_blank" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/didas-junior-gasana-30246026a/" target="_blank" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/didas___jr/" target="_blank" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <div class="sidebar-line"></div>
+    </div>
+
+    <!-- Email Sidebar -->
+    <div class="email-sidebar">
+        <a href="mailto:d.gasana@alustudent.com">d.gasana@alustudent.com</a>
+        <div class="sidebar-line"></div>
+    </div>
+
+    <!-- Navigation -->
     <header>
         <nav>
-            <ul class="main">
-                <li class="list-item"><a href="#header">Home</a></li>
-                <li class="list-item"><a href="#about">About</a></li>
-                <li class="list-item"><a href="#highlights">Experience</a></li>
-                <li class="list-item"><a href="#education">Mission</a></li>
-                <li class="list-item"><a href="#skills">Skills</a></li>
-                <li class="list-item"><a href="#project">Projects</a></li>
-                <li class="list-item"><a id="cont">Contact</a></li>
+            <a href="#" class="logo">DJ<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about" data-number="01">About</a></li>
+                <li><a href="#experience" data-number="02">Experience</a></li>
+                <li><a href="#skills" data-number="03">Skills</a></li>
+                <li><a href="#projects" data-number="04">Projects</a></li>
+                <li><a href="#contact" data-number="05">Contact</a></li>
             </ul>
+            <a href="mailto:d.gasana@alustudent.com" class="nav-cta">Say Hello</a>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
-    <section class="header" id="header">
-        <div>
-            <span id="closing">
-                <svg  xmlns="http://www.w3.org/2000/svg" fill="none" height="66" viewBox="0 0 66 66" width="66"><path d="m28.1267 4.23225c1.1879-5.175299 8.5587-5.175287 9.7466.00001l3.7596 16.38014c.4287 1.8676 1.8871 3.326 3.7547 3.7547l16.3802 3.7596c5.1752 1.1879 5.1752 8.5587-.0001 9.7466l-16.3801 3.7596c-1.8676.4287-3.326 1.8871-3.7547 3.7547l-3.7596 16.3802c-1.1879 5.1752-8.5587 5.1752-9.7466-.0001l-3.7596-16.3801c-.4287-1.8676-1.8871-3.326-3.7547-3.7547l-16.38015-3.7596c-5.175299-1.1879-5.175287-8.5587.00001-9.7466l16.38014-3.7596c1.8676-.4287 3.326-1.8871 3.7547-3.7547z" fill="#fff"/></svg>
-            </span>
-            <h1 class="heading">Hi. I'm Junior.<br>A Developer</h1>
-            <span id="opening">
-                <svg  xmlns="http://www.w3.org/2000/svg" fill="none" height="66" viewBox="0 0 66 66" width="66"><path d="m28.1267 4.23225c1.1879-5.175299 8.5587-5.175287 9.7466.00001l3.7596 16.38014c.4287 1.8676 1.8871 3.326 3.7547 3.7547l16.3802 3.7596c5.1752 1.1879 5.1752 8.5587-.0001 9.7466l-16.3801 3.7596c-1.8676.4287-3.326 1.8871-3.7547 3.7547l-3.7596 16.3802c-1.1879 5.1752-8.5587 5.1752-9.7466-.0001l-3.7596-16.3801c-.4287-1.8676-1.8871-3.326-3.7547-3.7547l-16.38015-3.7596c-5.175299-1.1879-5.175287-8.5587.00001-9.7466l16.38014-3.7596c1.8676-.4287 3.326-1.8871 3.7547-3.7547z" fill="#fff"/></svg>
-            </span>
-            <p>I'm passionate about crafting experiences that are engaging, accessible, and user-centric.</p>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <h1 class="heading">More?</h1>
-        <div class="about-content">
-            <div class="per-intro">
-                <div class="person">
-                    <img src="junior.png" alt="">
-                </div>
-                <p>Didas Junior Gasana | <br> 
-                    Software Engineering Major
-                </p>
-            </div>
-            <div class="about-text">
-                <h2>
-                    I am a Software Engineer who is passionate about how this field can be used to modernize the education sector.
-                </h2>
-                    <p>
-                        Over the past 2 years, I have been developing solutions in various IT fields such as web development and
-                        Internet of Things. I have also helped the younger generations to find their way into the programming world
-                        through various mentorship programs like HerInTech, SCIPIOT, among others. I attended highschool at Lycee De Kigali
-                        where I did Mathematics, Physics, and Computer Science oftenly abbreviated as MPC.
-                        I am currently pursuing a Bachelor's of Science in Software Engineering (BSE) at the African Leadership University
-                    </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="highlights" id="highlights">
-        <div class="first-high">
-            <div>
-                <h1>Development</h1>
-                <p>Full stack web developer</p>
-            </div>
-            <div>
-                <h1>3~</h1>
-            </div>
-        </div>
-        <div class="second-high">
-            <div>
-                <h1>Freelance</h1>
-                <p>Web/Mobile developer</p>
-            </div>
-            <div>
-                <h1>3~</h1>
-            </div>
-        </div>
-        <div class="third-high">
-            <div>
-                <h1>Facilitator</h1>
-                <p>Learning Facilitator</p>
-            </div>
-            <div>
-                <h1>1~</h1>
-            </div>
-        </div>
-        <div class="fourth-high">
-            <div>
-                <h1>IoT</h1>
-                <p>IoT Engineer</p>
-            </div>
-            <div>
-                <h1>2~</h1>
-            </div>
-        </div>
-    </section>
-
-    <section class="education" id="education">
-        <div class="edu-header">
-            <h2>Let's collaborate if you're committed to <span>modernizing Education</span>
-                <span>through technology. </span>
-            </h2>
-        </div>
-        <p>
-            Quality education holds the potential to address not only unemployment but also various complex societal challenges. Investing in the ICT sector and ensuring effective education for all can significantly mitigate unemployment while advancing community modernization and growth. 
-        </p>
-    </section>
-
-    <section class="skills" id="skills">
-        <div class="skills-left">
-            <div class="number">
-                <div>01</div>
-                <h3>Javascript</h3>
-                <p>
-                    I am proficient in JavaScript, Three.js, Node.js, React, and Angular, enabling me to excel in web development projects.
-                </p>
-            </div>
-            <div class="number">
-                <div>02</div>
-                <h3>Supabase</h3>
-                <p>
-                    My expertise in Supabase streamlines database management, ensuring secure and efficient web solutions.
-                </p>
-            </div>
-        </div>
-        <div class="skills-left">
-            <div class="number">
-                <div>03</div>
-                <h3>SQL</h3>
-                <p>
-                    My strong command of SQL empowers me to manage databases effectively, execute complex queries, and ensure data integrity.
-                </p>       
-            </div>
-            <div class="number">
-                <div>04</div>
-                <h3>Python</h3>
-                <p>
-                    With a strong grasp of Python, I develop diverse applications, automate tasks, and create innovative solutions.
-                </p>
-            </div>
-        </div>
-        <div class="skills-left">
-            <div class="number">
-                <div>05</div>
-                <h3>C++</h3>
-                <p>
-                    Proficient in C++, I've built a strong foundation through online resources and formal education. This expertise empowers me to contribute to complex software development projects.
-                </p>
-            </div>
-            <div class="number">
-                <div>06</div>
-                <h3>IoT</h3>
-                <p>
-                    In the realm of IoT, I design smart devices, harness sensor data, and build robust applications, focusing on security and efficiency.
-                </p>
-            </div>
-        </div> 
-    </section>
-
-    <div class="explanation">
-        <p>
-            I've cultivated a diverse skill set over the years. Beginning with JavaScript, I collaborated on projects at Andela Rwanda and tackled coding challenges on platforms like Codewars. <br> <br> My SQL expertise was honed through online resources and formal education, while IoT skills were acquired via hands-on projects and training programs. Proficiency in C++ was cultivated through online resources such as hackerrank and formal education. <br> <br> Finally, my skills in Supabase were nurtured during internships, offering practical insights into database management and development. These experiences have shaped me into a well-rounded tech professional.
-        </p>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#about" data-number="01">About</a></li>
+            <li><a href="#experience" data-number="02">Experience</a></li>
+            <li><a href="#skills" data-number="03">Skills</a></li>
+            <li><a href="#projects" data-number="04">Projects</a></li>
+            <li><a href="#contact" data-number="05">Contact</a></li>
+        </ul>
+        <a href="mailto:d.gasana@alustudent.com" class="nav-cta">Say Hello</a>
     </div>
 
-    <section class="project" id="project">
-        <h1 class="heading">Projects</h1>
-        <div class="cards">
-            <div class="card">
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <p class="hero-greeting reveal">Hi, my name is</p>
+            <h1 class="hero-name reveal">Didas Junior.</h1>
+            <h2 class="hero-tagline reveal">I architect systems that scale.</h2>
+            <p class="hero-description reveal">
+                I'm a software engineer, product founder, and systems architect with 4+ years of experience
+                building scalable platforms across public institutions, fintech, and consumer applications.
+                Currently Lead Software Engineer at <span class="highlight">Maico Limited</span>.
+            </p>
+            <a href="#projects" class="hero-cta reveal">Check out my work</a>
+        </div>
+        <div class="hero-particles" id="particles"></div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-heading reveal">
+            <span class="section-number">01.</span> About Me
+            <span class="heading-line"></span>
+        </h2>
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <p>
+                    Hello! I'm Junior, a strategic software engineer and product-driven systems architect
+                    based in Kigali, Rwanda. I build and deploy scalable digital platforms across
+                    <span class="highlight">public institutions</span>, <span class="highlight">fintech</span>,
+                    and <span class="highlight">mission-driven consumer applications</span>.
+                </p>
+                <p>
+                    I enjoy turning complex problems into clean, scalable solutions — whether that's
+                    enterprise systems for government institutions, consumer apps, or immersive VR experiences.
+                    I've also mentored 120+ students through programs like
+                    <span class="highlight">HerInTech</span> and <span class="highlight">Ida Technology</span>.
+                </p>
+                <p>
+                    I hold a BSc in Software Engineering from the
+                    <span class="highlight">African Leadership University</span> (Dean's Honor List 2024 & 2025).
+                </p>
+                <div class="tech-list">
+                    <p>Technologies I work with daily:</p>
+                    <ul>
+                        <li>JavaScript / TypeScript</li>
+                        <li>React / Angular / Vue.js</li>
+                        <li>Node.js / FeatherJS</li>
+                        <li>Golang</li>
+                        <li>Python / Flask</li>
+                        <li>Laravel / PHP</li>
+                        <li>Unity 3D / C#</li>
+                        <li>SQL / Supabase / NoSQL</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="about-image reveal">
+                <div class="image-wrapper">
+                    <img src="dg.JPG" alt="Didas Junior Gasana">
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <h2 class="section-heading reveal">
+            <span class="section-number">02.</span> Where I've Been
+            <span class="heading-line"></span>
+        </h2>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3>Lead Software Engineer <span class="timeline-company">@ Maico Limited</span></h3>
+                        <span class="timeline-date">Jan 2024 — Present</span>
+                    </div>
+                    <p>Lead architect and technical decision-maker across enterprise and public-sector deployments.
+                       Built a Queue Management System for the Rwanda National Police (FeatherJS, TypeScript),
+                       a Property Management System for the City of Kigali (Golang, Vue.js), and a Loan Management
+                       System for Iwacu Finance (Laravel). Mentor junior engineers and oversee CI/CD pipelines.</p>
+                    <div class="timeline-tags">
+                        <span>TypeScript</span><span>Golang</span><span>Vue.js</span><span>Laravel</span><span>FeatherJS</span><span>CI/CD</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3>Full Stack Developer <span class="timeline-company">@ FuelCapp Technologies</span></h3>
+                        <span class="timeline-date">Jul 2023 — Oct 2023</span>
+                    </div>
+                    <p>Developed responsive Angular applications integrated with Supabase for web and mobile.
+                       Increased website traffic by 10%, reduced render issues by 80% through cross-browser testing,
+                       and improved user conversion rate by 20% through UX collaboration.</p>
+                    <div class="timeline-tags">
+                        <span>Angular</span><span>Supabase</span><span>Testing</span><span>UX</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3>Developer <span class="timeline-company">@ Andela Rwanda</span></h3>
+                        <span class="timeline-date">Dec 2022 — Oct 2023</span>
+                    </div>
+                    <p>Designed and optimized web applications using React.js and Node.js. Defined system
+                       requirements, managed CI/CD pipelines using CircleCI and GitHub Actions, and executed
+                       quality assurance across live and in-development codebases.</p>
+                    <div class="timeline-tags">
+                        <span>React</span><span>Node.js</span><span>CircleCI</span><span>GitHub Actions</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h3>Learning Facilitator <span class="timeline-company">@ HerInTech & Ida Technology</span></h3>
+                        <span class="timeline-date">Oct 2021 — Aug 2023</span>
+                    </div>
+                    <p>Delivered 500+ hours of web development workshops with 4.8/5 satisfaction rating.
+                       Instructed students on JavaScript (Node.js, React.js) and Python. Assisted 120+ students
+                       and orchestrated project pitches that secured funding for select projects.</p>
+                    <div class="timeline-tags">
+                        <span>JavaScript</span><span>Python</span><span>Mentorship</span><span>Teaching</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission reveal" id="mission">
+        <div class="mission-content">
+            <h2>Building scalable systems for</h2>
+            <h2 class="mission-highlight">institutions, communities, and the faithful.</h2>
+            <p>
+                From enterprise platforms deployed at the Rwanda National Police and City of Kigali,
+                to a prayer app serving 330+ users, to VR-powered STEM education — I build technology
+                that serves real people and solves real problems.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2 class="section-heading reveal">
+            <span class="section-number">03.</span> Skills & Tools
+            <span class="heading-line"></span>
+        </h2>
+        <div class="skills-grid">
+            <div class="skill-card reveal">
+                <div class="skill-icon">01</div>
+                <h3>Frontend</h3>
+                <p>React, Angular, Vue.js, Unity 3D, Flutter. Building responsive, performant interfaces across web, mobile, and immersive platforms.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="92%"></div></div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">02</div>
+                <h3>Backend</h3>
+                <p>Node.js, Laravel, FeatherJS, Flask, Golang. Architecting scalable APIs and microservices for enterprise and public-sector systems.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">03</div>
+                <h3>Languages</h3>
+                <p>JavaScript, TypeScript, Python, Golang, C#, PHP. Polyglot approach to choosing the right tool for each problem domain.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">04</div>
+                <h3>Databases</h3>
+                <p>SQL, NoSQL, REST APIs, Supabase. Designing data models and query pipelines for high-integrity, production-grade systems.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="82%"></div></div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">05</div>
+                <h3>DevOps & CI/CD</h3>
+                <p>CircleCI, GitHub Actions, Git. Managing production deployments, automated pipelines, and infrastructure for reliable delivery.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="78%"></div></div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">06</div>
+                <h3>VR / XR & IoT</h3>
+                <p>Unity 3D, XR Interaction Toolkit, Meta Quest 2, Arduino. Building immersive simulations and connected hardware solutions.</p>
+                <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="section-heading reveal">
+            <span class="section-number">04.</span> Things I've Built
+            <span class="heading-line"></span>
+        </h2>
+
+        <!-- Featured Project 1: Senga -->
+        <div class="featured-project reveal">
+            <div class="project-image">
+                <a href="https://apps.apple.com/rw/app/senga/id6751882930" target="_blank">
+                    <div class="project-image-overlay"></div>
+                </a>
+            </div>
+            <div class="project-info">
+                <p class="project-overline">Featured Product — Founder</p>
+                <h3 class="project-title">Senga</h3>
+                <div class="project-description">
+                    <p>A privacy-first Catholic devotional platform for Kinyarwanda-speaking faithful. Features
+                       guided Rosary with all mysteries, daily Mass readings (auto-updated), complete Catholic hymns,
+                       and structured daily prayers. Zero data collection, no tracking, no third-party analytics.
+                       Deployed on both App Store and Google Play Store with 330+ active users.</p>
+                </div>
+                <ul class="project-tech">
+                    <li>Flutter</li><li>HTTPS API</li><li>Privacy-First</li><li>App Store</li><li>Google Play</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://apps.apple.com/rw/app/senga/id6751882930" target="_blank" aria-label="App Store">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.junior.rosaryapp&pcampaignid=web_share" target="_blank" aria-label="Play Store">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Project 2: VLEARN -->
+        <div class="featured-project featured-project-reverse reveal">
+            <div class="project-image">
+                <a href="https://www.youtube.com/watch?v=vE9kHNNdInY" target="_blank">
+                    <div class="project-image-overlay"></div>
+                </a>
+            </div>
+            <div class="project-info">
+                <p class="project-overline">Featured Research — Capstone</p>
+                <h3 class="project-title">VLEARN</h3>
+                <div class="project-description">
+                    <p>A VR & AI-powered STEM education platform enabling experiential learning through real-time
+                       interactive simulations and AI-driven conversational guidance. Modules include Gravity & Free Fall,
+                       Atomic & Molecular Assembly, the Digestive System, and an Interactive Solar System.</p>
+                </div>
+                <ul class="project-tech">
+                    <li>Unity 3D</li><li>C#</li><li>XR Toolkit</li><li>Meta Quest 2</li><li>AI</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://www.youtube.com/watch?v=vE9kHNNdInY" target="_blank" aria-label="Demo Video">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other Projects Grid -->
+        <h3 class="other-projects-title reveal">Other Noteworthy Projects</h3>
+        <div class="projects-grid">
+            <div class="project-card reveal">
+                <div class="project-card-header">
+                    <svg class="folder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <div class="project-card-links"></div>
+                </div>
+                <h3>Queue Management System</h3>
+                <p>Institutional queue and workflow system deployed at the Rwanda National Police. Backend services with structured authentication and operational workflows.</p>
+                <ul class="project-card-tech">
+                    <li>FeatherJS</li><li>TypeScript</li><li>Auth</li>
+                </ul>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-card-header">
+                    <svg class="folder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <div class="project-card-links"></div>
+                </div>
+                <h3>Property Management System</h3>
+                <p>Digitized property allocation and tracking for City of Kigali Markets. Full backend architecture with admin frontend interface.</p>
+                <ul class="project-card-tech">
+                    <li>Golang</li><li>Vue.js</li><li>REST API</li>
+                </ul>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-card-header">
+                    <svg class="folder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <div class="project-card-links"></div>
+                </div>
+                <h3>Loan Management System</h3>
+                <p>Financial lifecycle tracking for Iwacu Finance. Automated loan approval workflows, disbursement monitoring, and reporting pipelines.</p>
+                <ul class="project-card-tech">
+                    <li>Laravel</li><li>Blade</li><li>PHP</li><li>SQL</li>
+                </ul>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-card-header">
+                    <svg class="folder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <div class="project-card-links">
+                        <a href="https://www.youtube.com/watch?v=EDlOKTQJ4ao&t=5s" target="_blank" aria-label="Demo">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                </div>
                 <h3>E-Home</h3>
-                <p>
-                    A smart house specifically for people with disabilities and the aging population. The project is currently in implementation in the Eastern Part of Rwanda. <br>
-                    <a href="https://www.youtube.com/watch?v=EDlOKTQJ4ao&t=5s" target="_blank">Learn More &rarr;</a>
-                </p>
+                <p>A smart house for people with disabilities and the aging population. IoT-driven, currently implemented in Eastern Rwanda.</p>
+                <ul class="project-card-tech">
+                    <li>IoT</li><li>Arduino</li><li>C++</li><li>Sensors</li>
+                </ul>
             </div>
-            <div class="card">
+            <div class="project-card reveal">
+                <div class="project-card-header">
+                    <svg class="folder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <div class="project-card-links">
+                        <a href="https://dj-dev-ytclone.netlify.app/" target="_blank" aria-label="Live Demo">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                </div>
                 <h3>JTube</h3>
-                <p>
-                    A youtube clone made using React JS, Tailwind CSS, and Material UI. It is currently hosted on netlify. You can play music, and watch your favorite shows. <br>
-                    <a href="https://dj-dev-ytclone.netlify.app/" target="_blank">Learn More &rarr;</a>
-                </p>
+                <p>A YouTube clone built with React JS, Tailwind CSS, and Material UI. Stream music and watch your favorite shows.</p>
+                <ul class="project-card-tech">
+                    <li>React</li><li>Tailwind CSS</li><li>Material UI</li>
+                </ul>
             </div>
-            <div class="card">
-                <h3>Iphone 14 3D</h3>
-                <p>
-                    The iPhone 14 clone made using WebGiViewer and Three JS. It comprises of spinnable 3D models giving the user a formidable experience. <br>
-                    <a href="https://apple-iphone-by-dj.netlify.app/" target="_blank">Learn More &rarr;</a>
-                </p>
-            </div>
-            <div class="card">
-                <h3>Hackerrank</h3>
-                <p>
-                    These are renowned sets of tasks aimed at sharpening my programming skills. I am a Gold (Five star) C++ programmer. <br>
-                    <a href="https://www.hackerrank.com/gasanadj2003" target="_blank">Learn More &rarr;</a>
-                </p>
-            </div>
-            <div class="card">
-                <h3>Codewars</h3>
-                <p>
-                    These are series of tasks in multiple programming languages. I train in Javascript on Codewars. My current rank is 3KYU. <br>
-                    <a href="https://www.codewars.com/users/didas___jr" target="_blank">Learn More &rarr;</a>
-                </p>
-            </div>
-            <div class="card">
-                <h3>AirBnB clone</h3>
-                <p>
-                    This is a clone of the AirBnB website. The frontend is built with HTML and CSS whereas the backend is in Python and SQL. <br>
-                    <a href="https://github.com/gasanadj/alu-AirBnB_clone_v2" target="_blank">Learn More &rarr;</a>
-                </p>
+            <div class="project-card reveal">
+                <div class="project-card-header">
+                    <svg class="folder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <div class="project-card-links">
+                        <a href="https://apple-iphone-by-dj.netlify.app/" target="_blank" aria-label="Live Demo">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                </div>
+                <h3>iPhone 14 3D</h3>
+                <p>Interactive iPhone 14 clone with spinnable 3D models using WebGiViewer and Three.js for an immersive experience.</p>
+                <ul class="project-card-tech">
+                    <li>Three.js</li><li>WebGL</li><li>JavaScript</li>
+                </ul>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="contact-header">
-            <div class="avatar">
-                <img src="junior.png" alt="Junior image">
-            </div>
-            <div class="contact-header-details">
-                <div class="contact-name"> <b>Junior's Bot</b></div>
-                <div class="contact-subtitle">Ask me a question</div>
-            </div>
-            <button class="close">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                    <path d="M4.293 4.293a1 1 0 011.414 0L8 6.586l2.293-2.293a1 1 0 111.414 1.414L9.414 8l2.293 2.293a1 1 0 01-1.414 1.414L8 9.414l-2.293 2.293a1 1 0 01-1.414-1.414L6.586 8 4.293 5.707a1 1 0 010-1.414z"/>
-                  </svg>  
-            </button>
-        </div>
-
-        <div class="contact-info">
-            <div class="question-holder">
-                <div class="text-holder">Hi!</div>
-            </div>
-            <div class="question-holder">
-                <div class="text-holder">I'm Junior's Bot. I'm here to help you with any questions you might have about Junior's work.</div>
-            </div>
-            <div class="question-holder">
-                <div class="text-holder">How can I help you today?</div>
-            </div>
-            <div class="button-holder-group">
-            </div>
-            <div class="messages"></div>
+        <div class="contact-content reveal">
+            <p class="contact-overline">05. What's Next?</p>
+            <h2>Get In Touch</h2>
+            <p class="contact-description">
+                Whether you're looking for a lead engineer, want to collaborate on a product,
+                or have an idea that needs building — my inbox is always open.
+                I'll do my best to get back to you!
+            </p>
+            <a href="mailto:d.gasana@alustudent.com" class="contact-btn">Say Hello</a>
         </div>
     </section>
 
-    <section class="explanation">
-        <p id="outro">
-            Thank you for checking out my portifolio. <br>
-            If you loved what you saw, recommend me. <br>
-            If you want to collaborate, kindly get in touch with me. <br>
-            If something is not right, please advice me on how to fix it. <br>
-            Adios👋!
-        </p>
-    </section>
-
-    <footer class="footer">
-        <div class="copyright">
-            <div class="fav">
-                <div class="icon">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="20" cy="20" r="20" fill="#FF0000"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M28 20L16 28L16 12L28 20Z" fill="white"/>
-                    </svg>                    
-                </div>
-                <div class="song">
-                    <p id="repeat">On repeat</p>
-                    <a href="https://www.youtube.com/watch?v=igNVdlXhKcI" target="_blank">Marvin Gaye by Charlie Puth ft. Meghan Trainor</a>
-                </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>Designed & Built by Didas Junior Gasana</p>
+            <div class="footer-links">
+                <a href="https://github.com/GasanaJr" target="_blank">GitHub</a>
+                <a href="https://github.com/gasanadj" target="_blank">School GitHub</a>
+                <a href="https://www.linkedin.com/in/didas-junior-gasana-30246026a/" target="_blank">LinkedIn</a>
             </div>
-            <h2>&copy; 2023 Didas Junior</h2>
         </div>
-            <div class="else">
-                <ul>
-                    <li><h2>Elsewhere</h2></li>
-                    <li><a href="https://github.com/GasanaJr" target="_blank">Work GitHub</a></li>
-                    <li><a href="https://github.com/gasanadj" target="_blank">School GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/didas-junior-gasana-30246026a/" target="_blank">LinkedIn</a></li>
-                    <li><a href="https://www.instagram.com/didas___jr/" target="_blank">Instagram</a></li>
-                </ul>
-            </div>
-            <div class="else">
-                <ul>
-                    <li><h2>Contact</h2></li>
-                    <li><a id="cont1">Message</a></li>
-                </ul>
-            </div>
     </footer>
+
     <script src="script.js"></script>
-    
 </body>
 </html>

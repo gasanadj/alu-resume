@@ -1,161 +1,172 @@
-document.addEventListener("scroll", () => {
-  var elements = document.querySelectorAll(
-    ".about, .highlights, .education, .skills, .explanation, .project, .footer"
-  );
-  var windowHeight = window.innerHeight;
-  elements.forEach((element) => {
-    var elementPosition = element.getBoundingClientRect();
-    if (elementPosition.top < windowHeight) {
-      element.style.opacity = "1";
-      element.style.transform = "translateY(0)";
+// ============================================
+// CUSTOM CURSOR
+// ============================================
+
+const cursor = document.querySelector('.cursor');
+const follower = document.querySelector('.cursor-follower');
+
+if (cursor && follower) {
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        follower.style.left = e.clientX + 'px';
+        follower.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, button, .project-card, .skill-card').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('cursor-hover');
+            follower.classList.add('cursor-hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('cursor-hover');
+            follower.classList.remove('cursor-hover');
+        });
+    });
+}
+
+// ============================================
+// SCROLL REVEAL ANIMATIONS
+// ============================================
+
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            // Stagger the animations
+            setTimeout(() => {
+                entry.target.classList.add('active');
+            }, index * 100);
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// ============================================
+// SKILL BAR ANIMATION
+// ============================================
+
+const skillFills = document.querySelectorAll('.skill-fill');
+
+const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const width = entry.target.getAttribute('data-width');
+            entry.target.style.width = width;
+            skillObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+skillFills.forEach(el => skillObserver.observe(el));
+
+// ============================================
+// NAVIGATION BEHAVIOR
+// ============================================
+
+const header = document.querySelector('header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    // Add/remove scrolled class
+    if (currentScroll > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
     }
-  });
+
+    // Hide/show nav on scroll direction
+    if (currentScroll > lastScroll && currentScroll > 200) {
+        header.classList.add('hidden');
+    } else {
+        header.classList.remove('hidden');
+    }
+
+    lastScroll = currentScroll;
 });
 
-let buttons = document.querySelectorAll(".bq > button");
+// ============================================
+// MOBILE MENU
+// ============================================
 
-buttons.forEach(addButtonListener);
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
 
-function addButtonListener(button) {
-  button.addEventListener("click", function () {
-    const userMessage = this.innerText;
+if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
 
-    // Append user message to chat
-    appendMessage(userMessage, "user");
-
-    // Generate and append bot's reply
-    let replies = getBotReply(userMessage);
-    appendBotReplies(replies);
-  });
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
 }
 
-function appendMessage(message, sender) {
-  const messagesDiv = document.querySelector(".messages");
-  const messageDiv = document.createElement("div");
-  messageDiv.className = `${sender}-message`;
-  messageDiv.innerText = message;
-  messagesDiv.appendChild(messageDiv);
-  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+// ============================================
+// HERO PARTICLES
+// ============================================
 
-  scrollToBottom();
+const particlesContainer = document.getElementById('particles');
+
+if (particlesContainer) {
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (4 + Math.random() * 4) + 's';
+        particle.style.width = (2 + Math.random() * 4) + 'px';
+        particle.style.height = particle.style.width;
+        particlesContainer.appendChild(particle);
+    }
 }
 
-function getBotReply(userMessage) {
-  switch (userMessage) {
-    case "Just saying hi!":
-      return [
-        "Hello there!🤗",
-        "Thanks for saying hi",
-        "I hope you found my site fun😃",
-        "How can I assist you further?",
-      ];
-    case "We'd like to hire you":
-      return [
-        "That's great!",
-        "Thank you for considering me",
-        "Please reach out to me via Email.",
-        "The email is d.gasana@alustudent.com",
-        "Anything else?",
-      ];
-    case "Where did you learn coding?":
-      return [
-        "I learned coding from various online platforms such as Coursera, Hackerrank, Codewars, and Youtube🤓.",
-        "I also gained experience through continuous practice.",
-        "Anything else?",
-      ];
-    case "Be my mentor":
-      return [
-        "Sure!",
-        "I would be happy to help.",
-        "Please contact me via my email address.",
-        "The email is d.gasana@alustudent.com",
-        "Can't wait 🔥",
-      ];
-    default:
-      return ["Sorry, I don't understand that."];
-  }
-}
+// ============================================
+// SMOOTH SCROLL FOR NAV LINKS
+// ============================================
 
-function appendQuestionButtons() {
-  const messagesDiv = document.querySelector(".messages");
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerOffset = 80;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
-  const questions = [
-    "Just saying hi!",
-    "We'd like to hire you",
-    "Where did you learn coding?",
-    "Be my mentor",
-  ];
-
-  const buttonGroup = document.createElement("div");
-  buttonGroup.className = "button-holder-group";
-
-  questions.forEach((question) => {
-    const buttonHolder = document.createElement("div");
-    buttonHolder.className = "button-holder bq";
-
-    const button = document.createElement("button");
-    button.className = "bq";
-    button.innerText = question;
-
-    buttonHolder.appendChild(button);
-    buttonGroup.appendChild(buttonHolder);
-
-    // Add the click event listener to the newly created button
-    addButtonListener(button);
-  });
-
-  messagesDiv.appendChild(buttonGroup);
-
-  scrollToBottom();
-}
-
-// Append the initial set of question buttons when the chatbot loads
-appendQuestionButtons();
-
-function scrollToBottom() {
-  const messagesDiv = document.querySelector(".messages");
-  const lastChild = messagesDiv.lastChild;
-  lastChild.scrollIntoView({ behavior: "smooth" });
-}
-
-function appendBotReplies(replies, index = 0) {
-  if (index < replies.length) {
-    setTimeout(() => {
-      appendMessage(replies[index], "bot");
-      appendBotReplies(replies, index + 1);
-    }, 1000); // 1 second delay
-  } else {
-    // After all bot replies, display the question buttons again.
-    appendQuestionButtons();
-  }
-}
-
-// close the modal
-document.addEventListener("DOMContentLoaded", function () {
-  const closeButton = document.querySelector(".close");
-  const contactSection = document.querySelector(".contact");
-
-  closeButton.addEventListener("click", function () {
-    contactSection.style.display = "none";
-  });
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
 });
 
-var nav = document.querySelector(".main");
-document.addEventListener("scroll", () => {
-  if (window.scrollY > 180) {
-    nav.classList.add("nav-scroll");
-  } else {
-    nav.classList.remove("nav-scroll");
-  }
-});
+// ============================================
+// STAGGERED LOAD ANIMATION FOR HERO
+// ============================================
 
-const btn = document.getElementById("cont");
-const contactSection = document.querySelector(".contact");
-btn.addEventListener("click", () => {
-  contactSection.style.display = "block";
-});
-
-const btn2 = document.getElementById("cont1");
-btn2.addEventListener("click", () => {
-  contactSection.style.display = "block";
+document.addEventListener('DOMContentLoaded', () => {
+    const heroElements = document.querySelectorAll('.hero .reveal');
+    heroElements.forEach((el, i) => {
+        setTimeout(() => {
+            el.classList.add('active');
+        }, 300 + (i * 150));
+    });
 });
